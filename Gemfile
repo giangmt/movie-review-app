@@ -14,6 +14,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'devise', '~> 4.4'
 gem 'paperclip', '~> 6.0'
+gem 'bootstrap-sass', '~> 3.3'
+gem 'jquery-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
