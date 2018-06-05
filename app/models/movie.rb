@@ -1,4 +1,5 @@
 class Movie < ApplicationRecord
+	searchkick callbacks: false
 	belongs_to :user
 	has_many :reviews
 
