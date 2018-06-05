@@ -11,10 +11,6 @@
                 <td><%= @movie.title %></td>
               </tr>
               <tr>
-                <td><strong>Description:</strong></td>
-                <td><%= @movie.description %></td>
-              </tr>
-              <tr>
                 <td><strong>Length:</strong></td>
                 <td><%= @movie.length %></td>
               </tr>
@@ -29,6 +25,24 @@
             </tbody>          
           </table>
         </div>        
+      </div>
+      <div class="col-md-7 col-md-offset-1">
+        <h1 class="review_title"><%= @movie.title %></h1>
+        <p><%= @movie.description %></p>
+
+        <% if @reviews.blank? %>
+          <h3>No review just jet, would you like to add the first!</h3>
+          <%= link_to "Write Review", new_movie_review_path(@movie), class: "btn btn-danger" %>
+        <% else %>
+          <% @reviews.each do |review| %>
+            <div class="reviews">
+              <p>Review by: <%= review.user.email %></p>
+              <p><%= review.rating %></p>
+              <p><%= review.title %></p>
+              <p><%= review.comment %></p>
+            </div>
+          <% end %>
+        <% end %>
       </div>
     </div>
   </div>
